@@ -1,0 +1,261 @@
+.special-gothic-expanded-one-regular {
+ font-family: "Special Gothic Expanded One", sans-serif;
+ font-weight: 400;
+ font-style: normal;
+}
+
+
+.dm-serif-text-regular {
+ font-family: "DM Serif Text", serif;
+ font-weight: 400;
+ font-style: normal;
+}
+
+
+body{
+ font-family: "Special Gothic Expanded One", sans-serif;
+
+}
+
+#navbar {
+ background-color: #ffffff;
+ padding: 1rem;
+ font-family: "Special Gothic Expanded One", sans-serif;
+}
+
+#navdiv {
+ display: flex;
+ align-items: center;
+ max-width: 1200px;
+ margin: 0 ;
+}
+
+.beacon {
+ color: hsl(0, 0%, 20%);
+ font-size: 25px;
+ animation-name: logo1;
+ animation-duration: 1s;
+}
+
+.smart {
+ color: hsl(120, 100%, 71%);
+ font-size: 25px;
+ animation-name: logo;
+ animation-duration: 1.3s;
+
+}
+
+.logo a {
+ font-size: 1.5rem;
+ text-decoration: none;
+ font-weight: bold;
+ display: flex;
+}
+
+#navdiv ul {
+ display: flex;
+ list-style: none;
+ gap: 2rem;
+ margin-left: 42vw; 
+ padding: 0;
+}
+
+li:hover{
+ text-decoration: underline skyblue;
+}
+
+
+
+li a {
+ color: rgb(0, 0, 0);
+ text-decoration: none;
+ padding: 0.5rem 1rem;
+ font-size: 1.2em;
+
+}
+
+li a:hover {
+ border-radius: 4px;
+ text-decoration: underline;
+ text-decoration-color: rgb(148, 201, 223);
+ text-decoration-thickness: 5px;
+ text-underline-offset: 8px;
+}
+
+hr {
+ color: black;
+ margin-bottom: 10px;
+}
+
+a {
+ text-decoration: none;
+ color: inherit;
+}
+
+.title{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ font-family: "Special Gothic Expanded One", sans-serif;
+ text-decoration: underline;
+ text-underline-offset: 8px;   
+ font-size: 20px;  
+}
+
+.log-entry:hover {
+ background-color: #f5f5f5;
+}
+
+#logEntries p{
+ text-align: center;
+ font-size: 1.2em;
+ color: #666;
+ padding: 20px;
+}
+
+
+.clear-btn {
+ display: block;
+ margin: 20px auto;
+ padding: 10px 20px;
+ background-color: #c03e3e;
+ color: white;
+ border: none;
+ border-radius: 5px;
+ cursor: pointer;
+ font-family: "Special Gothic Expanded One", sans-serif;
+
+}
+
+.clear-btn:hover {
+ background-color: #cc0000;
+}
+
+
+
+
+@media (max-width: 768px) {
+  .logs-header,
+  .log-entry {
+    grid-template-columns: 1fr;
+    gap: 5px;
+  }
+
+  .logs-header span {
+    display: none;
+  }
+
+  .log-entry {
+    padding: 15px 0;
+    border-bottom: 2px solid #eee;
+  }
+
+  .log-entry span::before {
+    content: attr(data-label);
+    font-weight: bold;
+    margin-right: 10px;
+  }
+
+  #navdiv ul {
+    margin-left: auto;
+    gap: 1rem;
+  }
+
+  .clear-btn {
+    width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  #navdiv ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .logo a {
+    font-size: 1.2rem;
+  }
+
+  .title h1 {
+    font-size: 1.5rem;
+  }
+}
+
+
+
+
+
+@media (max-width: 768px) {
+ .logs-header,
+ .log-entry {
+   grid-template-columns: 1fr;
+   gap: 5px;
+ }
+
+ .logs-header span {
+   display: none;
+ }
+
+ .log-entry {
+   padding: 15px 0;
+   border-bottom: 2px solid #eee;
+ }
+
+ .log-entry span::before {
+   content: attr(data-label);
+   font-weight: bold;
+   margin-right: 10px;
+ }
+
+ #navdiv ul {
+   margin-left: auto;
+   gap: 1rem;
+ }
+
+ .clear-btn {
+   width: 90%;
+   cursor: pointer;
+ }
+}
+
+@media (max-width: 480px) {
+ #navdiv ul {
+   flex-wrap: wrap;
+   justify-content: center;
+   gap: 0.5rem;
+ }
+
+ .logo a {
+   font-size: 1.2rem;
+ }
+
+ .title h1 {
+   font-size: 1.5rem;
+ }
+}
+
+
+.logs-container {
+ max-width: 1200px;
+ margin: 20px auto;
+ padding: 20px;
+}
+
+.logs-header {
+ display: grid;
+ grid-template-columns: repeat(6, 1fr);
+ gap: 10px;
+ font-weight: bold;
+ border-bottom: 2px solid #333;
+ padding: 10px 0;
+ margin-bottom: 10px;
+}
+
+.log-entry {
+ display: grid;
+ grid-template-columns: repeat(6, 1fr);
+ gap: 10px;
+ padding: 10px 0;
+ border-bottom: 1px solid #eee;
+}

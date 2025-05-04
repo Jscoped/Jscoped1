@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Medicine Reminder</title>
+    <style>
+
+         a{
+            text-decoration: none;
+            color:black;
+            padding-top: 25px;
+         }
+         .back{
+            padding: 15px;
+            background-color: white;
+            margin: 10px;
+            border-radius: 6px;
+         }
+
+        body {
+            font-family: sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+        }
+
+        h1, h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        .input-section {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: #e9e9e9;
+            border-radius: 5px;
+        }
+
+        .input-section label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+        }
+
+        .input-section input[type="text"],
+        .input-section input[type="time"] {
+            width: calc(100% - 22px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1rem;
+        }
+
+        .input-section button {
+            width: 100%;
+            padding: 10px;
+            background-color: #5cb85c;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .input-section button:hover {
+            background-color: #4cae4c;
+        }
+
+        .schedule-section {
+            padding: 20px;
+            background-color: #e9e9e9;
+            border-radius: 5px;
+        }
+
+        #medicine-list {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 20px 0;
+        }
+
+        #medicine-list li {
+            background-color: #fff;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-bottom: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            word-break: break-word; /* Prevent long names from overflowing */
+        }
+
+        #medicine-list li span {
+            flex-grow: 1;
+            margin-right: 10px;
+        }
+
+        #medicine-list li button {
+            background-color: #d9534f;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #medicine-list li button:hover {
+            background-color: #c9302c;
+        }
+
+        #clear-schedule {
+            width: 100%;
+            padding: 10px;
+            background-color: #f0ad4e;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        #clear-schedule:hover {
+            background-color: #ec971f;
+        }
+    </style>
+</head>
+<body>
+    <button class="back" ><a href="homepage.html">HomePage</a></button>
+    <div class="container">
+        <h1>Medicine Reminder</h1>
+
+        <div class="input-section">
+            <label for="medicine-name">Medicine Name:</label>
+            <input type="text" id="medicine-name" list="medicine-suggestions">
+            <datalist id="medicine-suggestions">
+                </datalist>
+
+            <label for="reminder-time">Reminder Time:</label>
+            <input type="time" id="reminder-time">
+
+            <button id="add-medicine">Add Medicine</button>
+        </div>
+
+        <div class="schedule-section">
+            <h2>My Schedule</h2>
+            <ul id="medicine-list">
+                </ul>
+            <button id="clear-schedule">Clear All</button>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const medicineNameInput = document.getElementById('medicine-name');
+            const reminderTimeInput = document.getElementById('reminder-time');
+            const addMedicineButton = document.getElementById('add-medicine');
+            const medicineList = document.getElementById('medicine-list');
+            const clearScheduleButton = document.getElementById('clear-schedule');
+            const medicineSuggestionsDatalist = document.getElementById('medicine-suggestions');
+
+            const popularMedicines = [
+                "Lisinopril", "Levothyroxine", "Amlodipine", "Metformin", "Omeprazole",
+                "Simvastatin", "Hydrochlorothiazide", "Gabapentin", "Atorvastatin", "Aspirin",
+                "Ibuprofen", "Cetirizine", "Azithromycin", "Amoxicillin","Paracetamol"
+            ];
+
+            popularMedicines.forEach(medicine => {
+                const option = document.createElement('option');
+                option.value = medicine;
+                medicineSuggestionsDatalist.appendChild(option);
+            });
+
+            loadSchedule();
+
+            addMedicineButton.addEventListener('click', addMedicine);
+            clearScheduleButton.addEventListener('click', clearSchedule);
+
+            if ('Notification' in window) {
+                Notification.requestPermission();
+            }
+
+            function addMedicine() {
+                const name = medicineNameInput.value.trim();
+                const time = reminderTimeInput.value;
+
+                if (name === '' || time === '') {
+                    alert('Please enter both medicine name and time.');
+                    return;
+                }
+
+                const medicine = { name, time };
+                saveMedicine(medicine);
+                renderMedicine(medicine);
+
+                medicineNameInput.value = '';
+                reminderTimeInput.value = '';
+
+                setReminder(medicine);
+            }
+
+            function renderMedicine(medicine) {
+                const li = document.createElement('li');
+                li.innerHTML = `
+                    <span>${medicine.name} at ${medicine.time}</span>
+                    <button data-name="${medicine.name}" data-time="${medicine.time}">Delete</button>
+                `;
+                medicineList.appendChild(li);
+
+                li.querySelector('button').addEventListener('click', deleteMedicine);
+            }
+
+            function saveMedicine(medicine) {
+                const schedule = getSchedule();
+                schedule.push(medicine);
+                localStorage.setItem('medicineSchedule', JSON.stringify(schedule));
+            }
+
+            function getSchedule() {
+                const scheduleString = localStorage.getItem('medicineSchedule');
+                return scheduleString ? JSON.parse(scheduleString) : [];
+            }
+
+            function loadSchedule() {
+                const schedule = getSchedule();
+                schedule.forEach(medicine => {
+                    renderMedicine(medicine);
+                    setReminder(medicine); 
+                });
+            }
+
+            function deleteMedicine(event) {
+                const button = event.target;
+                const nameToDelete = button.dataset.name;
+                const timeToDelete = button.dataset.time;
+
+                let schedule = getSchedule();
+                schedule = schedule.filter(medicine => !(medicine.name === nameToDelete && medicine.time === timeToDelete));
+                localStorage.setItem('medicineSchedule', JSON.stringify(schedule));
+
+                button.parentElement.remove();
+               
+            }
+
+            function clearSchedule() {
+                localStorage.removeItem('medicineSchedule');
+                medicineList.innerHTML = '';
+                
+            }
+
+            function setReminder(medicine) {
+                const now = new Date();
+                const [hours, minutes] = medicine.time.split(':').map(Number);
+
+                const reminderTimeToday = new Date(now.getFullYear(), now.getMonth(), now.getDate(), hours, minutes, 0);
+
+                let reminderTime = reminderTimeToday;
+                if (reminderTimeToday < now) {
+                    reminderTime = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1, hours, minutes, 0);
+                }
+
+                const timeDifference = reminderTime.getTime() - now.getTime();
+
+                if (timeDifference > 0) {
+                    setTimeout(() => {
+                        triggerReminder(medicine);
+                        setReminder({ name: medicine.name, time: medicine.time });
+                    }, timeDifference);
+                } else {
+                 
+                     const reminderTimeTomorrow = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1, hours, minutes, 0);
+                     const timeDifferenceTomorrow = reminderTimeTomorrow.getTime() - now.getTime();
+                     setTimeout(() => {
+                         triggerReminder(medicine);
+                         setReminder({ name: medicine.name, time: medicine.time });
+                     }, timeDifferenceTomorrow);
+                }
+            }
+
+            function triggerReminder(medicine) {
+                if (Notification.permission === 'granted') {
+                    new Notification('Medicine Reminder', {
+                        body: `It's time to take your ${medicine.name}.`
+                    });
+                } else {
+                    alert(`Medicine Reminder: It's time to take your ${medicine.name}.`);
+                }
+            }
+        });
+    </script>
+</body>
+</html>

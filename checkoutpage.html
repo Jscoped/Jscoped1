@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Beacon Library</title>
+ <link rel="icon" type="image/x-icon" href="">
+ <link rel="stylesheet" href="checkoutpage.css">
+
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Sansation:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+ 
+ 
+ <nav id="navbar">
+  <div id="navdiv">
+      <div class="logo">
+          <a href="#"><span class="beacon">Beacon</span><span class="smart">Smart</span></a>
+      </div>
+      <ul>
+          <li><a href="homepage.html">Home</a></li>
+          <li><a href="logs.html">Logs</a></li>
+          <li><a href="#">Catalog</a></li>
+          <li><a href="#">ContactUs</a></li>
+          <li><a href="#">Back</a></li>
+      </ul>
+  </div>
+</nav>
+<hr> 
+<div class="title"><h1>Check-In</h1></div>
+<br></br>
+<form id="borrowForm" >
+ <label for="borrower">Borrower Name:</label>
+ <input type="text" id="borrower" name="borrower" required /><br /><br />
+
+ <label for="book">Book Title:</label>
+ <input type="text" id="book" name="book" required /><br /><br />
+
+ <label for="duration">Duration (in days):</label>
+ <input type="number" id="duration" name="duration" required /><br /><br />
+
+ <label for="class">Class:</label><br>
+ <select id="class" name="class" required>
+   <option value="">Select a class</option>
+   <option value="Year 1">Year 1</option>
+   <option value="Year 2">Year 2</option>
+   <option value="Year 3">Year 3</option>
+   <option value="Year 4">Year 4</option>
+   <option value="Year 5">Year 5</option>
+   <option value="Year 6">Year 6</option>
+   <option value="Year 7">Year 7</option>
+   <option value="Year 8">Year 8</option>
+   <option value="Year 9">Year 9</option>
+   <option value="Year 10">Year 10</option>
+   <option value="Year 11">Year 11</option>
+   <option value="Year 12">Year 12</option>
+   <option value="Year 12">Year 13</option>
+ </select><br /><br />
+
+ <input type="submit" value="Submit" class="submit-button"/>
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ <script src="checkoutpage.js"></script>
+</body>
+</html>
