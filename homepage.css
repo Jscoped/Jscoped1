@@ -1,0 +1,264 @@
+.special-gothic-expanded-one-regular {
+ font-family: "Special Gothic Expanded One", sans-serif;
+ font-weight: 400;
+ font-style: normal;
+}
+
+.dm-serif-text-regular {
+ font-family: "DM Serif Text", serif;
+ font-weight: 400;
+ font-style: normal;
+}
+
+
+.sansation-regular {
+  font-family: "Sansation", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.sansation-bold {
+  font-family: "Sansation", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+
+#navbar {
+ background-color: #ffffff;
+ padding: 2rem;
+ font-family: "Sansation", sans-serif;
+ font-weight: 700;
+}
+
+#navdiv {
+ display: flex;
+ align-items: center;
+ max-width: 1200px;
+ margin: 0 ;
+}
+
+.beacon {
+ color: hsl(0, 0%, 20%);
+ font-size: 25px;
+ animation-name: logo1;
+ animation-duration: 3s;
+}
+
+
+.logo a {
+ font-size: 1.2rem;
+ text-decoration: none;
+ font-weight: bold;
+ display: flex;
+}
+
+#navdiv ul {
+ display: flex;
+ list-style: none;
+ gap: 2rem;
+ margin-left: 60em; 
+ padding: 0;
+ 
+}
+
+li:hover{
+ text-decoration: underline skyblue;
+}
+
+
+
+li a {
+ color: rgb(0, 0, 0);
+ text-decoration: none;
+ padding: 0.5rem 1rem;
+ font-size: 1.2em;
+
+}
+
+li a:hover {
+ border-radius: 4px;
+ text-decoration: underline;
+ text-decoration-color: rgb(148, 201, 223);
+ text-decoration-thickness: 2px;
+ text-underline-offset: 2px;
+
+}
+
+hr {
+ color: black;
+ margin-bottom: 10px;
+}
+
+a {
+ text-decoration: none;
+ color: inherit;
+}
+
+.question {
+  font-family: "Sansation", sans-serif;
+ margin-top: 0.5em;
+ font-size: 4vw;
+ margin-bottom: 1.4em;
+ text-align: center;
+ animation-name: question1;
+ animation-duration: 2s;
+ border-radius: 7px;
+}
+
+.button-container {
+ display: flex;
+ justify-content: center;
+ gap: 2rem;
+ margin-top: 2rem;
+}
+
+
+.returnbtn {
+ display: inline-block;
+ font-size: 40px;
+ padding: 0.7em 1.7em;
+ text-align: center;
+ text-decoration: none;
+ border-radius: 9px;
+ font-family: "Sansation", sans-serif;
+ border: 1px solid hsla(0, 5%, 69%, 0.205);
+ background-color: hsla(0, 0%, 45%, 0.336);
+ color: black;
+ animation-name: question3;
+ animation-duration: 2s;
+ transition: background-color 0.5s linear;
+ border-top-right-radius: 2px;
+ border-bottom-left-radius: 2px;
+ transition: box-shadow 0.25s linear;
+ box-shadow: 12px  12px  12px  rgba(0, 0, 0, 0.1);
+}
+
+.checkoutbtn{
+ display: inline-block;
+ font-size: 40px;
+ padding: 0.7em 1.4em;
+ text-align: center;
+ text-decoration: none;
+ border-radius: 9px;
+ font-family: "Sansation", sans-serif;
+ border: 1px solid hsla(0, 5%, 69%, 0.205);
+ background-color: hsla(0, 5%, 69%, 0.205);
+ color: black;
+ animation-name: question2;
+ animation-duration: 2s;
+ transition: background-color 0.5s linear;
+ box-shadow: 12px  12px  12px  rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.25s linear;
+ border-top-right-radius: 2px;
+ border-bottom-left-radius: 2px;
+
+}
+
+
+
+.checkoutbtn1{
+ border: none;
+ background-color: transparent;
+}
+
+.returnbtn1{
+ border: none;
+ background-color: transparent;
+}
+
+
+
+
+.checkoutbtn:hover {
+  box-shadow: -12px  -12px  12px  rgba(0, 0, 0, 0.1);
+  background-color: hsla(0, 0%, 97%, 0.877);
+}
+.checkoutbtn1:active {
+ transform: scale(0.9);
+
+
+ 
+}
+
+.returnbtn:hover{
+  box-shadow: -14px  -12px  12px  rgba(0, 0, 0, 0.1);
+  background-color: hsl(0, 0%, 72%);
+}
+.returnbtn1:active{
+ transform: scale(0.9)
+
+}
+
+
+
+@keyframes question1{
+from {
+ transform: translateY(-70px);
+
+}
+}
+@keyframes question2{
+ from {
+  transform: translate(-70vh,70vh);
+ 
+ }
+ }
+ @keyframes question3{
+  from {
+   transform: translate(70vh,70vh);
+  
+  }
+  }
+
+
+  @keyframes logo{
+   from {
+    transform:translateY(-60px);
+
+   }
+   }
+
+   
+
+  @keyframes logo1{
+   
+  from {
+     transform: translateX(-150px);
+
+   }
+  }
+
+
+
+@media (max-width: 768px) {
+  .button-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .checkoutbtn,
+  .returnbtn {
+    font-size: 1.5rem;
+    padding: 0.5em 1em;
+    width: 80%;
+    text-align: center;
+  }
+
+  .question {
+    font-size: 2rem;
+  }
+
+  #navdiv ul {
+    margin-left: auto;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .question {
+    font-size: 1.5rem;
+  }
+
+  
+}

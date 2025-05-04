@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>logs</title>
+ <link rel="stylesheet" href="logs.css">
+
+
+
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Special+Gothic+Expanded+One&display=swap" rel="stylesheet">
+
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap" rel="stylesheet">
+
+
+
+
+ <style>
+    .inline-log {
+      display: inline-block;
+      margin-right: 15px;
+      display: grid;
+      grid-template-columns: 150px 100px 100px;
+    }
+    .no-records {
+    color: tomato;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 20px;
+  }
+  </style>
+  
+
+</head>
+<body>
+
+
+
+ <nav id="navbar">
+  <div id="navdiv">
+      <div class="logo">
+          <a href="#"><span class="beacon">Beacon</span><span class="smart">Smart</span></a>
+      </div>
+      <ul>
+          <li><a href="homepage.html">Home</a></li>
+          <li><a href="logs.html">Logs</a></li>
+          <li><a href="#">Catalog</a></li>
+          <li><a href="#">ContactUs</a></li>
+          <li><a href="homepage.html">Back</a></li>
+          <li><a href="index.html">More</a></li>
+      </ul>
+  </div>
+</nav>
+<hr> 
+
+
+
+
+<div class="logs-container">
+
+ <div class="logs-header">
+     <span>Borrower</span>
+     <span>Book Title</span>
+     <span>Duration</span>
+     <span>Class</span>
+     <span>Date</span>
+     <span>Type</span>
+ </div>
+
+ <div id="logsEntries">
+ </div>
+ 
+</div>
+
+<button id="clearLogs" class="clear-btn js-clear-btn">Clear All Logs</button>
+
+<script src="logs.js">
+    
+</script>
+ 
+</body>
+</html>
