@@ -8,6 +8,7 @@ if (logs.length > 0) {
       <div class="log-entry" style="${isCrossed ? 'text-decoration: line-through; color: grey;' : ''}">
         <span>${entry.borrower}</span>
         <span>${entry.book}</span>
+        <span>${entry.quantity}</span>
         <span>${entry.duration || '-'} days</span>
         <span>${entry.className}</span>
         <span>${entry.date}</span>

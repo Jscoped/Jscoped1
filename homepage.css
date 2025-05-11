@@ -10,10 +10,9 @@
  font-style: normal;
 }
 
-
 .sansation-regular {
   font-family: "Sansation", sans-serif;
-  font-weight: 400;
+  font-weight: 700;
   font-style: normal;
 }
 
@@ -24,30 +23,37 @@
 }
 
 
+body{
+  background-color: #f0f4f8;
+  margin: 0;
+}
+
+
 #navbar {
- background-color: #ffffff;
- padding: 2rem;
- font-family: "Sansation", sans-serif;
- font-weight: 700;
+background-color: rgb(31 41 55);
+ font-family: "Sansation", sans-serif ;
+ color: white;
+ margin: 0;
 }
 
 #navdiv {
  display: flex;
  align-items: center;
- max-width: 1200px;
  margin: 0 ;
 }
 
 .beacon {
- color: hsl(0, 0%, 20%);
- font-size: 25px;
+ color: white;
+ font-size: 20px;
  animation-name: logo1;
- animation-duration: 3s;
+ animation-duration: 1s;
+ margin-left: 5px;
 }
 
 
+
 .logo a {
- font-size: 1.2rem;
+ font-size: 1.5rem;
  text-decoration: none;
  font-weight: bold;
  display: flex;
@@ -57,19 +63,16 @@
  display: flex;
  list-style: none;
  gap: 2rem;
- margin-left: 60em; 
+ margin-left: 42vw; 
  padding: 0;
- 
-}
+ color: white;
 
-li:hover{
- text-decoration: underline skyblue;
 }
 
 
 
 li a {
- color: rgb(0, 0, 0);
+ color: white;
  text-decoration: none;
  padding: 0.5rem 1rem;
  font-size: 1.2em;
@@ -78,32 +81,30 @@ li a {
 
 li a:hover {
  border-radius: 4px;
- text-decoration: underline;
- text-decoration-color: rgb(148, 201, 223);
- text-decoration-thickness: 2px;
- text-underline-offset: 2px;
-
+background-color: rgba(49, 65, 87, 0.993);
 }
 
-hr {
- color: black;
- margin-bottom: 10px;
-}
+
 
 a {
  text-decoration: none;
  color: inherit;
 }
 
+a:active{
+  opacity: 0.7;
+}
+
 .question {
-  font-family: "Sansation", sans-serif;
+ font-family: "Special Gothic Expanded One", sans-serif;
  margin-top: 0.5em;
- font-size: 4vw;
+ font-size: 3vw;
  margin-bottom: 1.4em;
  text-align: center;
  animation-name: question1;
  animation-duration: 2s;
  border-radius: 7px;
+ color: rgb(31 41 55);
 }
 
 .button-container {
@@ -116,15 +117,15 @@ a {
 
 .returnbtn {
  display: inline-block;
- font-size: 40px;
- padding: 0.7em 1.7em;
+ font-size: 30px;
+ padding: 0.4em 1em;
  text-align: center;
  text-decoration: none;
  border-radius: 9px;
- font-family: "Sansation", sans-serif;
+ font-family: "Special Gothic Expanded One", sans-serif;
  border: 1px solid hsla(0, 5%, 69%, 0.205);
  background-color: hsla(0, 0%, 45%, 0.336);
- color: black;
+ color: rgb(31 41 55);
  animation-name: question3;
  animation-duration: 2s;
  transition: background-color 0.5s linear;
@@ -132,19 +133,20 @@ a {
  border-bottom-left-radius: 2px;
  transition: box-shadow 0.25s linear;
  box-shadow: 12px  12px  12px  rgba(0, 0, 0, 0.1);
+
 }
 
 .checkoutbtn{
  display: inline-block;
- font-size: 40px;
- padding: 0.7em 1.4em;
+ font-size: 30px;
+ padding: 0.4em 1em;
  text-align: center;
  text-decoration: none;
  border-radius: 9px;
- font-family: "Sansation", sans-serif;
+ font-family: "Special Gothic Expanded One", sans-serif;
  border: 1px solid hsla(0, 5%, 69%, 0.205);
  background-color: hsla(0, 5%, 69%, 0.205);
- color: black;
+ color: rgb(31 41 55);
  animation-name: question2;
  animation-duration: 2s;
  transition: background-color 0.5s linear;
@@ -152,6 +154,7 @@ a {
   transition: box-shadow 0.25s linear;
  border-top-right-radius: 2px;
  border-bottom-left-radius: 2px;
+
 
 }
 
@@ -176,6 +179,7 @@ a {
 }
 .checkoutbtn1:active {
  transform: scale(0.9);
+ opacity: 0.7;
 
 
  
@@ -186,7 +190,9 @@ a {
   background-color: hsl(0, 0%, 72%);
 }
 .returnbtn1:active{
- transform: scale(0.9)
+ transform: scale(0.9);
+ opacity: 0.7;
+ 
 
 }
 
@@ -203,6 +209,7 @@ from {
   transform: translate(-70vh,70vh);
  
  }
+ 50%{transform: scale(1.2);}
  }
  @keyframes question3{
   from {
