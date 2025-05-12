@@ -77,7 +77,6 @@ li a {
 }
 
 li a:hover {
-  border-radius: 4px;
   background-color: rgba(49, 65, 87, 0.993);
 }
 
@@ -119,7 +118,6 @@ a:active {
   background-color: #c03e3e;
   color: white;
   border: none;
-  border-radius: 5px;
   cursor: pointer;
   font-family: "Sansation", sans-serif;
 }
