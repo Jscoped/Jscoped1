@@ -1,0 +1,155 @@
+.special-gothic-expanded-one-regular {
+ font-family: "Special Gothic Expanded One", sans-serif;
+ font-weight: 400;
+ font-style: normal;
+}
+
+.dm-serif-text-regular {
+ font-family: "DM Serif Text", serif;
+ font-weight: 400;
+ font-style: normal;
+}
+
+.sansation-regular {
+  font-family: "Sansation", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.sansation-bold {
+  font-family: "Sansation", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+
+
+#navbar {
+background-color: rgb(31 41 55);
+ font-family: "Sansation", sans-serif ;
+ color: white;
+ margin: 0;
+}
+
+#navdiv {
+ display: flex;
+ align-items: center;
+ margin: 0 ;
+}
+
+.beacon {
+ color: white;
+ font-size: 20px;
+ animation-name: logo1;
+ animation-duration: 1s;
+ margin-left: 5px;
+}
+
+
+
+.logo a {
+ font-size: 1.5rem;
+ text-decoration: none;
+ font-weight: bold;
+ display: flex;
+}
+
+#navdiv ul {
+ display: flex;
+ list-style: none;
+ gap: 2rem;
+ margin-left: 42vw; 
+ padding: 0;
+ color: white;
+
+}
+
+
+
+li a {
+ color: white;
+ text-decoration: none;
+ padding: 0.5rem 1rem;
+ font-size: 1.2em;
+
+}
+
+li a:hover {
+ border-radius: 4px;
+background-color: rgba(49, 65, 87, 0.993);
+}
+
+
+
+a {
+ text-decoration: none;
+ color: inherit;
+}
+
+a:active{
+  opacity: 0.7;
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #f0f4f8;
+  font-family: 'Sansation', sans-serif;
+}
+
+.signup-container {
+  background-color: rgb(255, 255, 255);
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  text-align: center;
+}
+
+.signup-container h2 {
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.signup-container label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 1.1rem;
+}
+
+.signup-container input {
+  padding: 10px;
+  width: 100%;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.signup-container button {
+  padding: 10px 20px;
+  background-color: #1f2937;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.signup-container button:hover {
+  background-color: #374151;
+}
+ .error {
+      color: red;
+      font-size: 0.9em;
+      display: none;
+    }
+
+.main-content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-self: center;
+  align-content: center;
+  position: relative;
+  top: 250px;
+}

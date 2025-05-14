@@ -1,61 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>BeaconLibrary</title>
-    <link rel="stylesheet" href="homepage.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Special+Gothic+Expanded+One&display=swap"
-      rel="stylesheet"
-    />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BeaconLibrary</title>
+  <link rel="stylesheet" href="homepage.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Special+Gothic+Expanded+One&display=swap" rel="stylesheet" />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Sansation:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <nav id="navbar">
-      <div id="navdiv">
-        <div class="logo">
-          <a href="#" class="beacon">OpenShelf</a>
-        </div>
-        <ul>
-          <li><a href="homepage.html">Home</a></li>
-          <li><a href="logs.html">History</a></li>
-          <li><a href="catalog.html">Catalog</a></li>
-          <li><a href="index.html"> Sites</a></li>
-          <li><a href="signup.html">signup</a></li>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap" rel="stylesheet" />
 
-          <li><a href="homepage.html">Back</a></li>
-        </ul>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Sansation:wght@400;700&display=swap" rel="stylesheet" />
+</head>
+
+<body>
+  <nav id="navbar">
+    <div id="navdiv">
+      <div class="logo">
+        <a href="#" class="beacon">OpenShelf</a>
       </div>
-    </nav>
+      <ul>
+        <li><a href="homepage.html">Home</a></li>
+        <li><a href="logs.html">History</a></li>
+        <li><a href="catalog.html">Catalog</a></li>
+        <li id="loginstatus"><a href="index.html">SignIn</a></li>
 
-    <div class="content">
-      <h1 class="question">What would you like to do?</h1>
-      <div class="button-container">
-        <button class="checkoutbtn1">
-          <a href="checkoutpage.html" class="checkoutbtn">Check-In</a>
-        </button>
-        <button class="returnbtn1">
-          <a href="returnpage.html" class="returnbtn">Return</a>
-        </button>
-      </div>
+        <li><a href="homepage.html">Back</a></li>
+      </ul>
     </div>
+  </nav>
 
-    <script src="homepage.js"></script>
-  </body>
+  <h1 id="greeting">h</h1>
+
+
+  <div class="content">
+    <h1 class="question">What would you like to do?</h1>
+    <div class="button-container">
+      <button class="checkoutbtn1">
+        <a href="checkoutpage.html" class="checkoutbtn">Check-In</a>
+      </button>
+      <button class="returnbtn1">
+        <a href="returnpage.html" class="returnbtn">Return</a>
+      </button>
+    </div>
+  </div>
+
+  <script>
+    const signstatus = localStorage.getItem("signstatus");
+
+    if (signstatus !== "true") {
+      window.location.href = 'index.html';
+    } else {
+      const greetings = localStorage.getItem('username') || 'Guest';
+      const H1el = document.getElementById("greeting");
+      const loginStatus = document.getElementById('loginstatus');
+
+      if (H1el) {
+        H1el.innerText = `Welcome ${greetings},`;
+      }
+
+      if (loginStatus) {
+        loginStatus.innerHTML = '<a href="#" id="signout-link">Sign Out</a>';
+
+        document.getElementById('signout-link').addEventListener('click', () => {
+          localStorage.removeItem('username');
+          localStorage.removeItem('signstatus');
+          window.location.href = "index.html";
+        });
+      }
+    }
+  </script>
+
+</body>
+
 </html>

@@ -1,4 +1,6 @@
 let suggestions = [
+  "Alice in Wonderland",
+  "Cinderella",
   "Charlotte's Web",
   "Harry Potter and the Sorcerer's Stone",
   "Matilda",
@@ -70,6 +72,8 @@ inputbox.onkeyup = function () {
     resultsbox.innerHTML = "";
   }
 };
+
+
 function display(result){
     const content = result.map((list)=>{
         return "<li onclick=selectInput(this)>" + list + "</li>";

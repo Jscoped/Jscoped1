@@ -1,13 +1,13 @@
 .special-gothic-expanded-one-regular {
- font-family: "Special Gothic Expanded One", sans-serif;
- font-weight: 400;
- font-style: normal;
+  font-family: "Special Gothic Expanded One", sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .dm-serif-text-regular {
- font-family: "DM Serif Text", serif;
- font-weight: 400;
- font-style: normal;
+  font-family: "DM Serif Text", serif;
+  font-weight: 400;
+  font-style: normal;
 }
 
 .sansation-regular {
@@ -23,218 +23,233 @@
 }
 
 
-body{
+body {
   background-color: #f0f4f8;
   margin: 0;
 }
 
 
 #navbar {
-background-color: rgb(31 41 55);
- font-family: "Sansation", sans-serif ;
- color: white;
- margin: 0;
+  background-color: rgb(31 41 55);
+  font-family: "Sansation", sans-serif;
+  color: white;
+  margin: 0;
 }
 
 #navdiv {
- display: flex;
- align-items: center;
- margin: 0 ;
+  display: flex;
+  align-items: center;
+  margin: 0;
 }
 
 .beacon {
- color: white;
- font-size: 20px;
- animation-name: logo1;
- animation-duration: 1s;
- margin-left: 5px;
+  color: white;
+  font-size: 20px;
+  animation-name: logo1;
+  animation-duration: 1s;
+  margin-left: 5px;
 }
 
 
 
 .logo a {
- font-size: 1.5rem;
- text-decoration: none;
- font-weight: bold;
- display: flex;
+  font-size: 1.5rem;
+  text-decoration: none;
+  font-weight: bold;
+  display: flex;
 }
 
 #navdiv ul {
- display: flex;
- list-style: none;
- gap: 2rem;
- margin-left: 42vw; 
- padding: 0;
- color: white;
+  display: flex;
+  list-style: none;
+  gap: 2rem;
+  margin-left: 42vw;
+  padding: 0;
+  color: white;
 
 }
 
 
 
 li a {
- color: white;
- text-decoration: none;
- padding: 0.5rem 1rem;
- font-size: 1.2em;
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  font-size: 1.2em;
 
 }
 
 li a:hover {
- border-radius: 4px;
-background-color: rgba(49, 65, 87, 0.993);
+  border-radius: 4px;
+  background-color: rgba(49, 65, 87, 0.993);
 }
 
 
 
 a {
- text-decoration: none;
- color: inherit;
+  text-decoration: none;
+  color: inherit;
 }
 
-a:active{
+a:active {
   opacity: 0.7;
 }
 
 .question {
- font-family: "Special Gothic Expanded One", sans-serif;
- margin-top: 0.5em;
- font-size: 3vw;
- margin-bottom: 1.4em;
- text-align: center;
- animation-name: question1;
- animation-duration: 2s;
- border-radius: 7px;
- color: rgb(31 41 55);
+  font-family: "Special Gothic Expanded One", sans-serif;
+  margin-top: 0.5em;
+  font-size: 3vw;
+  margin-bottom: 1.4em;
+  text-align: center;
+  animation-name: question1;
+  animation-duration: 2s;
+  border-radius: 7px;
+  color: rgb(31 41 55);
 }
 
 .button-container {
- display: flex;
- justify-content: center;
- gap: 2rem;
- margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 2rem;
 }
 
 
 .returnbtn {
- display: inline-block;
- font-size: 30px;
- padding: 0.4em 1em;
- text-align: center;
- text-decoration: none;
- border-radius: 9px;
- font-family: "Special Gothic Expanded One", sans-serif;
- border: 1px solid hsla(0, 5%, 69%, 0.205);
- background-color: hsla(0, 0%, 45%, 0.336);
- color: rgb(31 41 55);
- animation-name: question3;
- animation-duration: 2s;
- transition: background-color 0.5s linear;
- border-top-right-radius: 2px;
- border-bottom-left-radius: 2px;
- transition: box-shadow 0.25s linear;
- box-shadow: 12px  12px  12px  rgba(0, 0, 0, 0.1);
-
-}
-
-.checkoutbtn{
- display: inline-block;
- font-size: 30px;
- padding: 0.4em 1em;
- text-align: center;
- text-decoration: none;
- border-radius: 9px;
- font-family: "Special Gothic Expanded One", sans-serif;
- border: 1px solid hsla(0, 5%, 69%, 0.205);
- background-color: hsla(0, 5%, 69%, 0.205);
- color: rgb(31 41 55);
- animation-name: question2;
- animation-duration: 2s;
- transition: background-color 0.5s linear;
- box-shadow: 12px  12px  12px  rgba(0, 0, 0, 0.1);
+  display: inline-block;
+  font-size: 30px;
+  padding: 0.4em 1em;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 9px;
+  font-family: "Special Gothic Expanded One", sans-serif;
+  border: 1px solid hsla(0, 5%, 69%, 0.205);
+  background-color: hsla(0, 0%, 45%, 0.336);
+  color: rgb(31 41 55);
+  animation-name: question3;
+  animation-duration: 2s;
+  transition: background-color 0.5s linear;
+  border-top-right-radius: 2px;
+  border-bottom-left-radius: 2px;
   transition: box-shadow 0.25s linear;
- border-top-right-radius: 2px;
- border-bottom-left-radius: 2px;
+  box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.1);
+
+}
+
+.checkoutbtn {
+  display: inline-block;
+  font-size: 30px;
+  padding: 0.4em 1em;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 9px;
+  font-family: "Special Gothic Expanded One", sans-serif;
+  border: 1px solid hsla(0, 5%, 69%, 0.205);
+  background-color: hsla(0, 5%, 69%, 0.205);
+  color: rgb(31 41 55);
+  animation-name: question2;
+  animation-duration: 2s;
+  transition: background-color 0.5s linear;
+  box-shadow: 12px 12px 12px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.25s linear;
+  border-top-right-radius: 2px;
+  border-bottom-left-radius: 2px;
 
 
 }
 
 
 
-.checkoutbtn1{
- border: none;
- background-color: transparent;
+.checkoutbtn1 {
+  border: none;
+  background-color: transparent;
 }
 
-.returnbtn1{
- border: none;
- background-color: transparent;
+.returnbtn1 {
+  border: none;
+  background-color: transparent;
 }
 
 
 
 
 .checkoutbtn:hover {
-  box-shadow: -12px  -12px  12px  rgba(0, 0, 0, 0.1);
+  box-shadow: -12px -12px 12px rgba(0, 0, 0, 0.1);
   background-color: hsla(0, 0%, 97%, 0.877);
 }
+
 .checkoutbtn1:active {
- transform: scale(0.9);
- opacity: 0.7;
+  transform: scale(0.9);
+  opacity: 0.7;
 
 
- 
+
 }
 
-.returnbtn:hover{
-  box-shadow: -14px  -12px  12px  rgba(0, 0, 0, 0.1);
+.returnbtn:hover {
+  box-shadow: -14px -12px 12px rgba(0, 0, 0, 0.1);
   background-color: hsl(0, 0%, 72%);
 }
-.returnbtn1:active{
- transform: scale(0.9);
- opacity: 0.7;
- 
+
+.returnbtn1:active {
+  transform: scale(0.9);
+  opacity: 0.7;
+
 
 }
 
-
-
-@keyframes question1{
-from {
- transform: translateY(-70px);
-
+#greeting {
+  font-size: 30px;
+  margin-left: 10px;
+  font-family: "Special Gothic Expanded One", sans-serif;
+  color:  rgb(31 41 55);
+  animation-name: question2;
+  animation-duration: 2s;
 }
-}
-@keyframes question2{
- from {
-  transform: translate(-70vh,70vh);
- 
- }
- 50%{transform: scale(1.2);}
- }
- @keyframes question3{
+
+
+@keyframes question1 {
   from {
-   transform: translate(70vh,70vh);
-  
+    transform: translateY(-70px);
+
   }
-  }
+}
 
-
-  @keyframes logo{
-   from {
-    transform:translateY(-60px);
-
-   }
-   }
-
-   
-
-  @keyframes logo1{
-   
+@keyframes question2 {
   from {
-     transform: translateX(-150px);
+    transform: translate(-70vh, 70vh);
 
-   }
   }
+
+  50% {
+    transform: scale(1.2);
+  }
+}
+
+@keyframes question3 {
+  from {
+    transform: translate(70vh, 70vh);
+
+  }
+}
+
+
+@keyframes logo {
+  from {
+    transform: translateY(-60px);
+
+  }
+}
+
+
+
+@keyframes logo1 {
+
+  from {
+    transform: translateX(-150px);
+
+  }
+}
 
 
 
@@ -267,5 +282,5 @@ from {
     font-size: 1.5rem;
   }
 
-  
+
 }

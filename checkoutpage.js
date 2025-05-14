@@ -81,39 +81,36 @@ function selectInput(list) {
   resultsbox.innerHTML = "";
 }
 
-document
-  .getElementById("borrowForm")
-  .addEventListener("submit", function (event) {
-    event.preventDefault();
+const borrowForm = document.getElementById('borrowForm');
 
-    const borrower = document.getElementById("borrower").value;
-    const book = document.getElementById("book").value;
-    const duration = document.getElementById("duration").value;
-    const className = document.getElementById("class").value;
-    const quantity  = document.getElementById("quantity").value
+borrowForm.addEventListener('submit', (event) => {
+  event.preventDefault();
+  const borrower = localStorage.getItem('username') || 'Guest';
+  const book = document.getElementById('book').value.trim();
+  const quantity = document.getElementById('quantity').value;
+  const duration = document.getElementById('duration').value;
+  const className = document.getElementById('class').value;
+  const date = new Date().toLocaleDateString();
 
-    const currentPage = window.location.pathname;
-    const type = currentPage.includes("checkout")
-      ? "Checked Out"
-      : currentPage.includes("return")
-      ? "Returned"
-      : "Unknown";
+  const newEntry = {
+    borrower,
+    book,
+    quantity,
+    duration,
+    className,
+    date,
+    type: 'Check-In'
+  };
 
-    const newEntry = {
-      borrower,
-      book,
-      quantity,
-      duration,
-      className,
-      type,
-      date: new Date().toLocaleDateString(),
-    };
+ const currentLogs = JSON.parse(localStorage.getItem('borrowLogs')) || [];
+  currentLogs.push(newEntry);
+  localStorage.setItem('borrowLogs', JSON.stringify(currentLogs));
 
-    let logs = JSON.parse(localStorage.getItem("borrowLogs")) || [];
 
-    logs.push(newEntry);
+  alert("Book checked in successfully! Redirecting to logs...");
+  setTimeout(() => {
+  window.location.href = "logs.html";
+}, 2000);
 
-    localStorage.setItem("borrowLogs", JSON.stringify(logs));
+});
 
-    window.location.href = "logs.html";
-  });
