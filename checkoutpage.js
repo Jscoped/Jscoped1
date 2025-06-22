@@ -54,42 +54,43 @@ let suggestions = [
 ];
 
 const inputbox = document.getElementById("book");
-const resultsbox = document.querySelector('.result-box');
-
+const resultsbox = document.querySelector(".result-box");
 
 inputbox.onkeyup = function () {
   let result = [];
   let input = inputbox.value;
   if (input.length) {
-    result = suggestions.filter((keyword) => {
-      return keyword.toLowerCase().includes(input.toLowerCase());
-    });
+    result = suggestions.filter((keyword) =>
+      keyword.toLowerCase().includes(input.toLowerCase())
+    );
   }
   display(result);
   if (!result.length) {
     resultsbox.innerHTML = "";
   }
 };
-function display(result){
-    const content = result.map((list)=>{
-        return "<li onclick=selectInput(this)>" + list + "</li>";
-    });
-    resultsbox.innerHTML = "<ul>" + content.join('') + "</ul>";
-  }
+
+function display(result) {
+  const content = result.map((list) => {
+    return `<li onclick="selectInput(this)">${list}</li>`;
+  });
+  resultsbox.innerHTML = `<ul>${content.join("")}</ul>`;
+}
+
 function selectInput(list) {
   inputbox.value = list.innerHTML;
   resultsbox.innerHTML = "";
 }
 
-const borrowForm = document.getElementById('borrowForm');
+const borrowForm = document.getElementById("borrowForm");
 
-borrowForm.addEventListener('submit', (event) => {
+borrowForm.addEventListener("submit", (event) => {
   event.preventDefault();
-  const borrower = localStorage.getItem('username') || 'Guest';
-  const book = document.getElementById('book').value.trim();
-  const quantity = document.getElementById('quantity').value;
-  const duration = document.getElementById('duration').value;
-  const className = document.getElementById('class').value;
+  const borrower = localStorage.getItem("username") || "Guest";
+  const book = document.getElementById("book").value.trim();
+  const quantity = document.getElementById("quantity").value;
+  const duration = document.getElementById("duration").value;
+  const className = document.getElementById("class").value;
   const date = new Date().toLocaleDateString();
 
   const newEntry = {
@@ -99,18 +100,26 @@ borrowForm.addEventListener('submit', (event) => {
     duration,
     className,
     date,
-    type: 'Check-In'
+    type: "Checked-out",
   };
 
- const currentLogs = JSON.parse(localStorage.getItem('borrowLogs')) || [];
+  const currentLogs = JSON.parse(localStorage.getItem("borrowLogs")) || [];
   currentLogs.push(newEntry);
-  localStorage.setItem('borrowLogs', JSON.stringify(currentLogs));
+  localStorage.setItem("borrowLogs", JSON.stringify(currentLogs));
+
+  const msg = document.querySelector(".redirectory-message");
+  msg.style.display = "flex";
+  msg.innerHTML = "Book borrowed successfully! Redirecting...";
 
 
-  alert("Book checked in successfully! Redirecting to logs...");
   setTimeout(() => {
-  window.location.href = "logs.html";
-}, 2000);
-
+    window.location.href = "logs.html";
+  }, 2000);
 });
 
+document.getElementById("add-book").addEventListener("click", () => {
+  const bookName = document.getElementById("book").value.trim();
+  if (bookName && !suggestions.includes(bookName)) {
+    suggestions.push(bookName);
+  }
+});

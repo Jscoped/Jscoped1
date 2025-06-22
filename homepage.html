@@ -36,7 +36,7 @@
     </div>
   </nav>
 
-  <h1 id="greeting">h</h1>
+  <h1 id="greeting">Welcome Admin,</h1>
 
 
   <div class="content">
@@ -46,7 +46,7 @@
         <a href="checkoutpage.html" class="checkoutbtn">Check-In</a>
       </button>
       <button class="returnbtn1">
-        <a href="returnpage.html" class="returnbtn">Return</a>
+        <a href="logs.html" class="returnbtn">Return</a>
       </button>
     </div>
   </div>
@@ -57,19 +57,13 @@
     if (signstatus !== "true") {
       window.location.href = 'index.html';
     } else {
-      const greetings = localStorage.getItem('username') || 'Guest';
-      const H1el = document.getElementById("greeting");
       const loginStatus = document.getElementById('loginstatus');
 
-      if (H1el) {
-        H1el.innerText = `Welcome ${greetings},`;
-      }
 
       if (loginStatus) {
         loginStatus.innerHTML = '<a href="#" id="signout-link">Sign Out</a>';
 
         document.getElementById('signout-link').addEventListener('click', () => {
-          localStorage.removeItem('username');
           localStorage.removeItem('signstatus');
           window.location.href = "index.html";
         });

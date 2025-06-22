@@ -15,25 +15,24 @@
  <link rel="preconnect" href="https://fonts.googleapis.com">
  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap" rel="stylesheet">
+<script src="https://kit.fontawesome.com/25c0196127.js" crossorigin="anonymous"></script>
 
 
+<style>
+  .inline-log {
+    display: inline-block;
+    margin-right: 15px;
+    display: grid;
+    grid-template-columns: 150px 100px 100px;
+  }
 
-
- <style>
-    .inline-log {
-      display: inline-block;
-      margin-right: 15px;
-      display: grid;
-      grid-template-columns: 150px 100px 100px;
-    }
-    .no-records {
+  .no-records {
     color: tomato;
     text-align: center;
     font-weight: bold;
     margin-top: 20px;
   }
-  </style>
-  
+</style>
 
 </head>
 <body>
@@ -54,9 +53,9 @@
       </ul>
   </div>
 </nav>
-
-
-
+<div class="searchcontainer">
+  <input type="text" id="js.search-logs" class="searchlog" placeholder="Search Logs...">
+</div>
 
 
 <div class="logs-container">
@@ -77,6 +76,7 @@
 </div>
 
 <button id="clearLogs" class="clear-btn js-clear-btn">Clear All Logs</button>
+
 
 <script src="logs.js">
     

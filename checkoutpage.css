@@ -25,6 +25,7 @@
 body {
   background-color: #f0f4f8;
   margin: 0;
+  height: 100vh;
   font-family: "Sansation", sans-serif;
 }
 
@@ -106,10 +107,11 @@ a:active {
   box-sizing: border-box;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   position: absolute;
-  top: 60%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   border-radius: 6px;
+
 }
 
 h1 {
@@ -135,18 +137,20 @@ input {
   width: 45rem;
   font-size: 20px;
   color: black;
-  border: 1px solid black;
+  border: none;
   height: 45px;
   font-family: "Sansation", sans-serif;
   outline-color: rgb(50, 89, 199);
   border: 1px solid rgb(158, 158, 158);
   margin: 5px;
+  border-radius: 4px;
 }
 
 #class {
   font-family: "Sansation", sans-serif;
   padding: 8px;
   border-radius: 4px;
+
 }
 
 .submit-button {
@@ -168,7 +172,7 @@ input {
 }
 
 .result-box ul {
-  border-top: 1px solid #999;
+  border: 1px solid #999;
   padding: 15px 10px;
 }
 
@@ -184,4 +188,80 @@ input {
   max-height: 200px;
   overflow-y: scroll;
   border: 1px solid rgb(255, 254, 254);
+}
+
+.dots {
+  font-weight: 800;
+  display: inline-block;
+  animation: jumpingdots 1.5s infinite ease-in-out;
+}
+
+
+.dots:nth-child(2) {
+  animation-delay: 0s;
+}
+.dots:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.dots:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+@keyframes jumpingdots {
+  0%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-6px);
+  }
+}
+.redirectory-message {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(205, 250, 179);
+  width: fit-content;
+  height: 50px;
+  border: 1px solid rgb(204, 204, 204);
+  padding: 5px 10px;
+  border-radius: 4px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  margin: 20px auto;
+  gap: 5px;
+}
+
+
+
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+.fa-solid{
+  color: black;
+  padding: 5px;
+  
+}
+
+.add-book{
+  width: fit-content;
+  margin: 0;
+  padding: 9px;
+  display: flex;
+  position: relative;
+  left: 40.5rem;
+  background-color: rgb(107, 241, 107);
+  border-radius: 4px;
+  font-size: 15px;
+  color: white;
+  border: none;
+ font-family: "Sansation", sans-serif;
+
+}
+
+.searchbox{
+  border-bottom: 2px solid rgb(184, 183, 183);
 }
