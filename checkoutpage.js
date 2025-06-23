@@ -117,9 +117,3 @@ borrowForm.addEventListener("submit", (event) => {
   }, 2000);
 });
 
-document.getElementById("add-book").addEventListener("click", () => {
-  const bookName = document.getElementById("book").value.trim();
-  if (bookName && !suggestions.includes(bookName)) {
-    suggestions.push(bookName);
-  }
-});
